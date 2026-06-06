@@ -56,10 +56,7 @@ def home():
               
               {/* Text Box */}
               <div className="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center border-b-4 lg:border-b-0 lg:border-r-4 border-border bg-main relative overflow-hidden">
-                {/* Decorative Japanese Stamp (Hanko) */}
-                <div className="absolute top-12 right-12 size-24 border-4 border-[#ff2a2a] bg-transparent flex items-center justify-center opacity-90 select-none pointer-events-none animate-spin-slow">
-                  <span className="text-[#ff2a2a] font-black text-5xl">極</span>
-                </div>
+
                 
                 <div className="animate-stagger">
                   <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-none tracking-tighter text-main-foreground uppercase z-10">
