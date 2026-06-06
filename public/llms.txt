@@ -1,0 +1,68 @@
+# Sistine Documentation
+
+Sistine is a Python framework that wraps Streamlit with a routing layer, an HTML DOM builder (`el`), and reactive components (powered by Alpine.js). It enables pixel-perfect custom UIs while maintaining the simplicity of Python.
+
+## Installation
+Sistine requires Python 3.10+.
+Using uv: `uv pip install sistine`
+Standard: `pip install sistine`
+
+CLI commands:
+- `sistine init`: Scaffold an MVC project
+- `sistine run`: Run the server
+- `sistine build main.py --out dist`: Build static HTML
+
+## Routing
+Sistine uses decorator-based routing instead of standard Streamlit multipage.
+
+```python
+from sistine import Sistine, el
+app = Sistine(title="My App")
+
+@app.sistine("/")
+def home():
+    return str(el.h1("Home Page"))
+
+@app.sistine("/user/{user_id}")
+def profile(user_id: int):
+    return str(el.h1(f"User {user_id}"))
+```
+
+## HTML Builder (el)
+Sistine provides an element builder. Syntax: `el.tag(attributes)(children)`.
+
+```python
+el.div(cls="card", data_id="123")(
+    el.h2(cls="font-bold")("Title"),
+    el.p()("Description")
+)
+# Self-closing
+el.input(type="text")()
+```
+Attributes like `className` or `cls` map to `class`. Attributes with `_` like `html_for` map to `for`. Attributes starting with `x_` like `x_on_click` map to `x-on:click` (for Alpine.js).
+
+## Server Query
+Register Python functions as JSON endpoints that can be called from the frontend without reloading.
+
+```python
+from sistine import fetch
+@app.query(ttl=60)
+def get_weather(city: str):
+    return fetch(f"https://wttr.in/{city}?format=j1")
+
+@app.query(method="POST")
+def create_user(data: dict):
+    return {"status": "success", "user": data}
+```
+
+## Reactive Components
+Sistine includes pre-built reactive components leveraging Alpine.js under the hood.
+- `QueryDropdown(query="endpoint_name", label_key="name")`
+- `QueryTable(query="endpoint_name", columns=["id", "name"])`
+- `QueryMutation(query="endpoint_name", method="POST", body_js='{ id: 1 }')`
+
+## Tailwind CSS
+Sistine supports Tailwind CSS natively via CDN without Node.js.
+```python
+app.use_tailwind()
+```
