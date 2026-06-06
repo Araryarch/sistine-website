@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import Text from "@/components/Text";
 import { codeToHtml } from "shiki";
 
 export default async function Home() {
@@ -65,19 +66,22 @@ def home():
                 
                 <div className="animate-stagger">
                   <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-none tracking-tighter text-main-foreground uppercase z-10">
-                    Build UIs <br/>
+                    <Text id="Bikin UI" en="Build UIs" /> <br/>
                     <span className="bg-background text-foreground px-4 py-2 border-4 border-border inline-block mt-4 shadow-shadow">
-                      With Python
+                      <Text id="Pakai Python" en="With Python" />
                     </span>
                   </h1>
                   
                   <p className="text-xl lg:text-2xl font-bold text-main-foreground mb-12 max-w-xl border-l-8 border-border pl-6 py-2 bg-main z-10">
-                    Sistine wraps Streamlit with a routing layer, DOM builder, and reactive components—giving you pixel-perfect custom UI.
+                    <Text 
+                      id="Sistine bikin Streamlit naik level dengan fitur routing, DOM builder, dan komponen reaktif—ngasih kamu kebebasan penuh buat ngeracik UI yang presisi dan mantap."
+                      en="Sistine wraps Streamlit with a routing layer, DOM builder, and reactive components—giving you pixel-perfect custom UI."
+                    />
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-6 z-10">
                     <Link href="/docs" className="bg-chart-4 text-main-foreground font-black text-xl px-8 py-4 border-4 border-border shadow-[4px_4px_0px_0px_var(--border)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all text-center uppercase">
-                      Get Started
+                      <Text id="Gas Nyobain" en="Get Started" />
                     </Link>
                     <a href="https://github.com/araryarch/sistine" target="_blank" rel="noreferrer" className="bg-background text-foreground font-black text-xl px-8 py-4 border-4 border-border shadow-[4px_4px_0px_0px_var(--border)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all text-center uppercase">
                       GitHub

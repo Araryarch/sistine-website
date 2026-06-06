@@ -1,15 +1,19 @@
 import CodeBlock from "@/components/CodeBlock";
 import Link from "next/link";
+import Text from "@/components/Text";
 
 export default function CliDocs() {
   return (
     <div className="pb-20">
       <h1 className="text-4xl md:text-5xl font-black mb-8 border-b-8 border-border pb-4">
-        CLI & Scaffolding
+        <Text id="CLI & Kerangka" en="CLI & Scaffolding" />
       </h1>
 
       <p className="mb-6 font-bold text-lg">
-        Sistine provides command-line tools to streamline project creation and management.
+        <Text 
+          id="Sistine nyediain tool command-line buat mempermudah pembuatan dan manajemen project lu."
+          en="Sistine provides command-line tools to streamline project creation and management."
+        />
       </p>
 
       <CodeBlock 
@@ -30,9 +34,14 @@ sistine run app.py
 sistine build main.py --out dist`} 
       />
 
-      <h3 className="text-2xl font-black mt-12 mb-4">Project Structure</h3>
+      <h3 className="text-2xl font-black mt-12 mb-4">
+        <Text id="Struktur Project" en="Project Structure" />
+      </h3>
       <p className="mb-4 font-bold text-lg">
-        Running <code>sistine init</code> will scaffold a production-ready MVC (Model-View-Controller) structure:
+        <Text 
+          id={<>Jalanin <code>sistine init</code> bakal langsung ngebangun struktur MVC (Model-View-Controller) yang siap buat production:</>}
+          en={<>Running <code>sistine init</code> will scaffold a production-ready MVC (Model-View-Controller) structure:</>}
+        />
       </p>
 
       <CodeBlock 

@@ -2,21 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "./LanguageProvider";
 
-const DOCS_LINKS = [
-  { href: "/docs", label: "Introduction" },
-  { href: "/docs/installation", label: "Installation" },
-  { href: "/docs/cli", label: "CLI & Scaffolding" },
-  { href: "/docs/mcp", label: "AI Integration (MCP)" },
-  { href: "/docs/routing", label: "Routing" },
-  { href: "/docs/html-builder", label: "HTML Builder (el)" },
-  { href: "/docs/tailwind", label: "Tailwind CSS" },
-  { href: "/docs/server-query", label: "Server Query" },
-  { href: "/docs/components", label: "Reactive Components" },
+export const DOCS_LINKS = [
+  { href: "/docs", label: "Introduction", label_id: "Pengenalan" },
+  { href: "/docs/installation", label: "Installation", label_id: "Instalasi" },
+  { href: "/docs/cli", label: "CLI & Scaffolding", label_id: "CLI & Kerangka" },
+  { href: "/docs/mcp", label: "AI Integration (MCP)", label_id: "Integrasi AI (MCP)" },
+  { href: "/docs/routing", label: "Routing", label_id: "Routing (Rute)" },
+  { href: "/docs/html-builder", label: "HTML Builder (el)", label_id: "Pembuat HTML (el)" },
+  { href: "/docs/tailwind", label: "Tailwind CSS", label_id: "Tailwind CSS" },
+  { href: "/docs/server-query", label: "Server Query", label_id: "Query Server" },
+  { href: "/docs/components", label: "Reactive Components", label_id: "Komponen Reaktif" },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   return (
     <aside className="fixed top-[70px] z-30 h-[calc(100vh-70px)] w-[250px] overflow-y-auto border-r-4 border-border bg-secondary-background hidden lg:block">
@@ -28,7 +30,7 @@ export default function Sidebar() {
 
       <div className="relative z-10">
         <div className="border-b-4 border-border p-4 text-xl font-heading bg-main text-main-foreground">
-          Getting Started
+          {t("Mulai Belajar", "Getting Started")}
         </div>
         <nav className="flex flex-col">
           {DOCS_LINKS.map((link) => {
@@ -43,7 +45,7 @@ export default function Sidebar() {
                     : "hover:bg-main hover:text-main-foreground text-foreground"
                 }`}
               >
-                {link.label}
+                {t(link.label_id, link.label)}
               </Link>
             );
           })}

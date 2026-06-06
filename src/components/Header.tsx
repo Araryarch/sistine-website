@@ -5,6 +5,8 @@ import { Search } from "lucide-react";
 import { useState, useEffect } from "react";
 import SearchModal from "./SearchModal";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -47,7 +49,8 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
+            <LanguageToggle />
             <ThemeToggle />
             
             {/* Search Button */}
@@ -61,6 +64,8 @@ export default function Header() {
                 Ctrl K
               </span>
             </button>
+
+            <MobileNav />
           </div>
         </div>
       </nav>

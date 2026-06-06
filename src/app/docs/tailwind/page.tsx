@@ -1,6 +1,7 @@
 import CodeBlock from "@/components/CodeBlock";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Text from "@/components/Text";
 
 export default function TailwindDocs() {
   return (
@@ -10,7 +11,10 @@ export default function TailwindDocs() {
       </h1>
 
       <p className="mb-6 font-bold text-lg">
-        Enable Tailwind CDN — no Node.js required:
+        <Text 
+          id="Nyalain Tailwind lewat CDN — nggak perlu install Node.js segala:"
+          en="Enable Tailwind CDN — no Node.js required:"
+        />
       </p>
 
       <CodeBlock 
@@ -19,7 +23,9 @@ export default function TailwindDocs() {
 app.use_tailwind()`} 
       />
 
-      <h3 className="text-2xl font-black mt-12 mb-4">Usage Example</h3>
+      <h3 className="text-2xl font-black mt-12 mb-4">
+        <Text id="Contoh Pake" en="Usage Example" />
+      </h3>
 
       <CodeBlock 
         language="python" 
@@ -31,8 +37,6 @@ def index():
         )
     )`} 
       />
-
-      
     </div>
   );
 }

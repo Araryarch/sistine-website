@@ -2,20 +2,29 @@ import CodeBlock from "@/components/CodeBlock";
 import Link from "next/link";
 import Alert from "@/components/Alert";
 import { ArrowLeft, Home, Star } from "lucide-react";
+import Text from "@/components/Text";
 
 export default function ComponentsDocs() {
   return (
     <div className="pb-20">
       <h1 className="text-4xl md:text-5xl font-black mb-8 border-b-8 border-border pb-4">
-        Reactive Components
+        <Text id="Komponen Reaktif" en="Reactive Components" />
       </h1>
 
       <Alert type="info">
-        All components use Alpine.js under the hood for client-side interactions without reloading.
+        <Text 
+          id="Semua komponen pake Alpine.js di balik layar buat interaksi client-side tanpa perlu reload halaman."
+          en="All components use Alpine.js under the hood for client-side interactions without reloading."
+        />
       </Alert>
 
       <h3 className="text-2xl font-black mt-12 mb-4">QueryDropdown</h3>
-      <p className="font-bold mb-4">Two modes: Fetch mode (retrieves from <code>@app.query</code>) or Static mode (static data).</p>
+      <p className="font-bold mb-4">
+        <Text 
+          id={<>Dua mode: Mode Fetch (narik data dari <code>@app.query</code>) atau Mode Static (data statis).</>}
+          en={<>Two modes: Fetch mode (retrieves from <code>@app.query</code>) or Static mode (static data).</>}
+        />
+      </p>
       
       <CodeBlock 
         language="python" 
@@ -41,7 +50,9 @@ QueryDropdown(
       />
 
       <h3 className="text-2xl font-black mt-12 mb-4">QueryTable</h3>
-      <p className="font-bold mb-4">Automatic table with pagination support:</p>
+      <p className="font-bold mb-4">
+        <Text id="Tabel otomatis lengkap sama support pagination:" en="Automatic table with pagination support:" />
+      </p>
       
       <CodeBlock 
         language="python" 
@@ -58,7 +69,9 @@ QueryTable(
       />
 
       <h3 className="text-2xl font-black mt-12 mb-4">QueryMutation</h3>
-      <p className="font-bold mb-4">Write actions (POST/PUT/DELETE) with confirmation:</p>
+      <p className="font-bold mb-4">
+        <Text id="Aksi buat nulis data (POST/PUT/DELETE) pake konfirmasi:" en="Write actions (POST/PUT/DELETE) with confirmation:" />
+      </p>
 
       <CodeBlock 
         language="python" 

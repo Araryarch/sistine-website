@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "sonner";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import "./globals.css";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -27,21 +28,23 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-base transition-colors duration-300">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          {children}
-          <Toaster 
-            position="bottom-right"
-            toastOptions={{
-              className: "border-4 border-border bg-chart-4 text-main-foreground font-black shadow-[4px_4px_0_var(--border)] rounded-none !p-4 !text-base",
-              style: { borderRadius: '0px' }
-            }}
-          />
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange={false}
+          >
+            {children}
+            <Toaster 
+              position="bottom-right"
+              toastOptions={{
+                className: "border-4 border-border bg-chart-4 text-main-foreground font-black shadow-[4px_4px_0_var(--border)] rounded-none !p-4 !text-base",
+                style: { borderRadius: '0px' }
+              }}
+            />
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
