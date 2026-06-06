@@ -35,7 +35,7 @@ export default function McpDocs() {
       "command": "uv",
       "args": [
         "run",
-        "https://raw.githubusercontent.com/araryarch/sistine/main/docs-site/mcp-server.py"
+        "https://raw.githubusercontent.com/Araryarch/sistine/main/docs-site/mcp-server.py"
       ]
     }
   }
@@ -58,7 +58,7 @@ export default function McpDocs() {
         <li>Click <strong>+ Add New MCP Server</strong>.</li>
         <li>Set the name to <code>sistine-docs</code>.</li>
         <li>Set the type to <code>command</code>.</li>
-        <li>Set the command to: <code>uv run https://raw.githubusercontent.com/araryarch/sistine/main/docs-site/mcp-server.py</code></li>
+        <li>Set the command to: <code>uv run https://raw.githubusercontent.com/Araryarch/sistine/main/docs-site/mcp-server.py</code></li>
       </ul>
 
       <h2 className="text-3xl font-black mt-16 mb-6 pb-2 border-b-4 border-border">Usage</h2>

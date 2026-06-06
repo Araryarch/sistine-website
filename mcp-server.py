@@ -11,7 +11,7 @@ from mcp.server.fastmcp import FastMCP
 
 # Initialize FastMCP server
 mcp = FastMCP("Sistine Docs Server")
-remote_docs_url = "https://raw.githubusercontent.com/araryarch/sistine/main/docs-site/public/llms.txt"
+remote_docs_url = "https://raw.githubusercontent.com/Araryarch/sistine/main/docs-site/public/llms.txt"
 
 def fetch_docs() -> str:
     try:
