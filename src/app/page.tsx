@@ -55,8 +55,13 @@ def home():
             <div className="grid grid-cols-1 lg:grid-cols-12 border-b-4 border-border flex-1">
               
               {/* Text Box */}
-              <div className="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center border-b-4 lg:border-b-0 lg:border-r-4 border-border bg-main relative overflow-hidden">
-
+              <div className="lg:col-span-7 p-8 lg:p-16 flex flex-col justify-center border-b-4 lg:border-b-0 lg:border-r-4 border-border bg-main relative overflow-hidden group">
+                
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 z-0 opacity-10 mix-blend-overlay pointer-events-none bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                  style={{ backgroundImage: 'url("/sistine-bg.png")' }}
+                ></div>
                 
                 <div className="animate-stagger">
                   <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-none tracking-tighter text-main-foreground uppercase z-10">
