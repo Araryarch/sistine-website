@@ -44,7 +44,7 @@ export default function McpDocs() {
       <Alert type="info">
         Ini menggunakan kehebatan <code>uv run</code> dari Python. AI Agent Anda akan secara otomatis mengunduh script MCP ini langsung dari GitHub Anda, membuat <em>virtual environment</em> secara <em>on-the-fly</em>, lalu menjalankannya tanpa Anda perlu meng-install apa pun!
       </Alert>
-      <Alert type="tip">
+      <Alert type="info">
         Sistine adalah <em>framework</em> Python, jadi pendekatan menggunakan <code>uv</code> ini terlihat sangat rapi dan menyatu dengan ekosistem (<em>zero configuration, zero registry</em>). Anda <strong>TIDAK PERLU</strong> memiliki akun NPM sama sekali!
       </Alert>
 
